@@ -1,0 +1,89 @@
+
+//GRID SETUP
+
+.container {
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% auto 10%;
+
+  grid-row-gap: 15px;
+
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  height: 40px;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 0px
+}
+
+.menu { display: none; }
+
+section {
+  grid-area: content;
+}
+
+footer {
+  grid-area: footer;
+  height: 40px;
+  background-color: #c4c4c4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0px;
+}
+
+
+//CARD DEF
+
+.card {
+  background-color: #EEE;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
+  width: 85%;
+  margin: 30px;
+}
+
+.feature {
+  height: 200px;
+}
+
+.quick {
+  height: 75px;
+}
+
+
+@media (min-width: 1024px) {
+
+  .container {
+    display: grid;
+
+    grid-row-gap: 0px;
+
+    grid-template-columns: 240px auto;
+    grid-template-rows: 40px auto;
+    grid-template-areas:
+      "header header"
+      "menu content";
+  }
+
+  .menu {
+    grid-area: menu;
+    display: inline;
+    background-color: #c4c4c4;
+  }
+
+  footer {
+    display: none;
+  }
+
+}
