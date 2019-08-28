@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   login(username, password){
-    return this._http.post( this._apiAddress + '/login', {username: username, password: password} ,this._options )
+    return this._http.post( this._apiAddress + '/login', {username: username, password: password}, this._options.post )
       .map((response: Response) => {
 
         let token = response.json() && response.json().token;

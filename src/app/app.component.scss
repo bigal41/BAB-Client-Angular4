@@ -1,46 +1,49 @@
+.no-padding {
+  padding: 0px;
+}
+
+.bab-spacer {
+  flex: 1 1 auto;
+}
 
 //GRID SETUP
 
-.container {
-  display: grid;
-
-  grid-template-columns: 1fr;
-  grid-template-rows: 10% auto 10%;
-
-  grid-row-gap: 15px;
-
-  grid-template-areas:
-    "header"
-    "content"
-    "footer";
+body {
+  font-family: 'Roboto', sans-serif !important;
 }
 
-header {
-  grid-area: header;
-  height: 40px;
-  background-color: #000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin-top: 0px
+body > * {
+  font-size: 1.2em;
+  line-height: 1.5;
 }
 
-.menu { display: none; }
+.site-name {
+  color: #E90000;
+  text-align: center;
+}
+
+/* nav styles */
+nav {
+  background: #136fd2;
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #d0cfc5
+}
+
+nav a:hover {
+  text-decoration: none;
+}
 
 section {
   grid-area: content;
-}
-
-footer {
-  grid-area: footer;
-  height: 40px;
-  background-color: #c4c4c4;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-bottom: 0px;
 }
 
 
@@ -48,8 +51,7 @@ footer {
 
 .card {
   background-color: #EEE;
-  box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
-  width: 85%;
+  width: auto;
   margin: 30px;
 }
 
@@ -61,29 +63,36 @@ footer {
   height: 75px;
 }
 
-
 @media (min-width: 1024px) {
 
-  .container {
+  .site-name {
+    text-align: left;
+  }
+
+  section {
     display: grid;
-
-    grid-row-gap: 0px;
-
-    grid-template-columns: 240px auto;
-    grid-template-rows: 40px auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 460px 135px 135px 135px;
     grid-template-areas:
-      "header header"
-      "menu content";
+      "featureA featureB";
+
   }
 
-  .menu {
-    grid-area: menu;
-    display: inline;
-    background-color: #c4c4c4;
+  .card.feature{
+    height: 400px;
   }
 
-  footer {
-    display: none;
+  #featureA {
+    grid-area: featureA;
+  }
+
+  #featureB {
+    grid-area: featureB;
+  }
+
+  .quick {
+    grid-column-start: 1;
+    grid-column-end: span 2;
   }
 
 }

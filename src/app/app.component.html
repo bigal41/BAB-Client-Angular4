@@ -1,25 +1,57 @@
-<div class="container">
-  <header>
-  </header>
-  <div class="menu">
-  </div>
-  <section>
-    <div class="card feature">
+<div style="height: 100vh;">
+
+  <mat-toolbar style="background: black">
+
+    <div fxShow="true" fxHide.gt-sm="true">
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
     </div>
 
-    <div class="card feature">
+    <span class="site-name">Ball Above All</span>
+    <span class="bab-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+
+      <a href="#" mat-button>Menu Item 1</a>
+      <a href="#" mat-button>Menu Item 2</a>
+
     </div>
 
-    <div class="card quick">
-    </div>
 
-    <div class="card quick">
-    </div>
 
-    <div class="card quick">
-    </div>
+  </mat-toolbar>
 
-  </section>
+  <mat-sidenav-container fxFlexFill>
+
+    <mat-sidenav #sidenav fxLayout="column">
+
+      <div fxLayout="column">
+
+        <a href="#" mat-button>Menu Item 1</a>
+        <a href="#" mat-button>Menu Item 2</a>
+
+      </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content fxFlexFill>
+
+      <section class="container-fluid no-padding">
+        <div class="card feature mat-elevation-z7" id="featureA">
+        </div>
+
+        <div class="card feature mat-elevation-z7" id="featureB">
+        </div>
+
+        <div class="card quick mat-elevation-z5" *ngFor="let section of sections">
+          {{section}}
+        </div>
+
+      </section>
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+
   <footer>
   </footer>
 </div>
